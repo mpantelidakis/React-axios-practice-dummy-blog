@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+// import { Redirect } from 'react-router-dom'
 
 import './NewPost.css';
 
@@ -7,7 +8,8 @@ class NewPost extends Component {
     state = {
         title: '',
         content: '',
-        author: 'Minas'
+        author: 'Minas',
+        submitted: false
     }
 
     postDataHandler = () => {
@@ -19,6 +21,9 @@ class NewPost extends Component {
         axios.post('/posts', data)
         .then(response=> {
             console.log(response)
+            // We can also <Redirect to='/posts'/> component inside JSX conditionally
+            // To redirect after a successful request
+            this.props.history.push('/posts')
         })
     }
 

@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Adds router props to any component we wrap with it
+// import { withRouter } from 'react-router-dom'
+
 import './Post.css';
 
 const post = (props) => (
